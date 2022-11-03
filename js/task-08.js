@@ -5,8 +5,6 @@ function onFormSubmit(event) {
     const formEl = event.currentTarget.elements;
     const email = formEl.email.value;
     const password = formEl.password.value;
-    console.log(email);
-    console.log(password);
     if ( email === "" || password === ""){
         alert("Заповніть всі поля вводу");
     }else{
