@@ -1,17 +1,14 @@
- const refs = {
-    input: document.querySelector('input#name-input'),
-    nameLable: document.querySelector('span#name-output')
-
+const refs = {
+  input: document.querySelector("input#name-input"),
+  nameLable: document.querySelector("span#name-output"),
+};
+refs.input.addEventListener("input", onInputEmpty);
+refs.input.removeEventListener("input", onInputFull);
+function onInputEmpty(event) {
+  refs.nameLable.textContent = event.currentTarget.value
+    ? event.currentTarget.value
+    : "Anonimous";
 }
-refs.input.addEventListener('input' , onInputEmpty);
-refs.input.removeEventListener('input' , onInputFull);
-function onInputEmpty(event){
-    refs.nameLable.textContent = event.currentTarget.value ? event.currentTarget.value : 'Anonimous';
-   }
 function onInputFull(event) {
-    refs.nameLable.textContent = !event.currentTarget.value;
-    
+  refs.nameLable.textContent = !event.currentTarget.value;
 }
-
-
-
